@@ -1,0 +1,32 @@
+#Creates variables "largest" and "smallest", sets both to "None"
+largest = None
+smallest = None
+
+#Creates a loop and asks for user input number
+while True:
+    num = input('Enter a number: ')
+    #Sees if the user enters 'done', and if so, exits the loop
+    if num == 'done': 
+        break
+    #Tries to convert the user input string to an integer number or gives an error
+    try:
+        int_num = int(num)
+    except:
+        print('Invalid input, must be an integer number')
+        continue
+    #Sets the first input value to "smallest" 
+    if smallest is None:
+        smallest = int_num
+    #Sets the first input value to "largest" 
+    if largest is None:
+        largest = int_num
+    #if new input is less than current "smallest", set "smallest" to new input
+    elif int_num < smallest:
+        smallest = int_num
+    #if new input is greater than current "largest", set "largest" to new input
+    elif int_num > largest:
+        largest = int_num
+
+#Displays the "largest" and "smallest" numbers
+print('Maximum is', largest)
+print('Minimum is', smallest)
